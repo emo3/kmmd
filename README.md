@@ -1,21 +1,29 @@
-# Alpine Docker image and install KMyMoney
+# Ubuntu Docker image and install KMyMoney
 
-## Steps to Install KMyMoney on an Alpine Docker Image
+## Steps to Install KMyMoney on an ubuntu Docker Image
 
-- Create a Dockerfile: Start by creating a Dockerfile that uses an Alpine base image.
-- Install Required Packages: You will need to install KMyMoney along with its dependencies. This typically includes Qt libraries and other KDE components.
+This will create a docker container with just KMyMoney installed.
+
+- As of 06/25/2025
+  - ubuntu:latest => 24.04.2 LTS
+  - kmymoney => 5.1.3-1build15
+- Create a Dockerfile: Start by creating a Dockerfile that uses an ubuntu base image.
+- Install Required Packages: You will need to install KMyMoney along with its dependencies.
+  This typically includes Qt libraries and other KDE components.
 - `cd ~/code/cookbooks/kmmd`
 - Build the Docker Image: Use the Dockerfile to build your image.
   `docker build -t kmymoney-ubuntu .`
-
 - Set DISPLAY Variable: Run the following command to set the DISPLAY environment variable
   `export DISPLAY=:0`
 - Run the Container: Once the image is built, you can run a container from it.
-- Access Control: When you run the Docker container, you may need to allow access for the container to connect to XQuartz.
+- Access Control: When you run the Docker container,
+  you may need to allow access for the container to connect to XQuartz.
   `xhost + 127.0.0.1`
 - Where you store your data **WILL** be different that mine.
   Please remember to replace {YourGDriveEmailHere} with your email connected to Google Drive.
-- The -v options will allow you to bind the local directories on you MacOS with the docker container.
+  If you another cloud storage, then suggest changes that you have verified.
+- The -v options will allow you to bind the local directories
+  on you MacOS with the docker container.
 
 ```sh
 # Run the container
@@ -26,6 +34,6 @@ docker run -it --rm --name kmymoney -d \
     -v ~/Library/CloudStorage/GoogleDrive-{YourGDriveEmailHere}:/root/mydata \
     -v ~/Library/CloudStorage/GoogleDrive-{YourGDriveEmailHere}/My\ Drive/Banks/kmymoney/.config/kmymoney:/root/.config/kmymoney \
     kmymoney-ubuntu
-# Shell into
+# Shell into container
 docker exec -it kmymoney /bin/bash
 ```

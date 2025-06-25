@@ -1,5 +1,4 @@
 # Use a specific version of Ubuntu
-# FROM ubuntu:22.04
 FROM ubuntu:latest
 
 # Set the time zone
