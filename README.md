@@ -37,3 +37,4 @@ docker run -it --rm --name kmymoney -d \
 # Shell into container
 docker exec -it kmymoney /bin/bash
 ```
+[![Docker Image CI](https://github.com/emo3/kmmd/actions/workflows/docker-image.yml/badge.svg)](https://github.com/emo3/kmmd/actions/workflows/docker-image.yml)
