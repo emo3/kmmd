@@ -1,12 +1,34 @@
-# Ignore environment variable files
-.env
-.env.local
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
 
-# Ignore logs
-*.log
-
-# Ignore temporary files
-*.tmp
-*.swp
+# OS generated files
 .DS_Store
 Thumbs.db
+
+# Docker files
+*.log
+*.pid
+*.tar
+*.bak
+
+# VS Code settings
+.vscode/
+
+# Environment files
+.env
+.env.*
+
+# Python virtual environments
+venv/
+ENV/
+env/
+
+# Node modules (if any JS tooling)
+node_modules/
+
+# Ignore build artifacts
+build/
+dist/
+*.egg-info/
