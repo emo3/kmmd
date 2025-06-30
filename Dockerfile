@@ -1,5 +1,5 @@
 # Use a specific version of Ubuntu
-FROM ubuntu:24.04
+FROM ubuntu:latest
 
 # Set the time zone
 ENV TZ=America/New_York

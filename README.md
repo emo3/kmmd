@@ -13,7 +13,14 @@ This will create a docker container with just KMyMoney installed.
 - `git clone https://github.com/emo3/gitlabh.git`
 - `cd gitlabh`
 - Build the Docker Image: Use the Dockerfile to build your image.
-  `docker build -t kmymoney-ubuntu .`
+
+```sh
+# Pull the latest Ubuntu image
+docker pull ubuntu:latest
+# Build the container
+docker build -t kmymoney-ubuntu .
+```
+
 - Set DISPLAY Variable: Run the following command to set the DISPLAY environment variable
   `export DISPLAY=:0`
 - Run the Container: Once the image is built, you can run a container from it.
