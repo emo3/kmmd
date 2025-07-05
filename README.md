@@ -10,8 +10,8 @@ This will create a docker container with just KMyMoney installed.
 - Create a Dockerfile: Start by creating a Dockerfile that uses an ubuntu base image.
 - Install Required Packages: You will need to install KMyMoney along with its dependencies.
   This typically includes Qt libraries and other KDE components.
-- `git clone https://github.com/emo3/gitlabh.git`
-- `cd gitlabh`
+- `git clone https://github.com/emo3/kmmd.git`
+- `cd kmmd`
 - Build the Docker Image: Use the Dockerfile to build your image.
 
 ```sh
