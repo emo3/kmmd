@@ -36,7 +36,8 @@ For example, to mount your Google Drive and your KMyMoney data directory:
 
 **Note:**  
 
-- Adjust the paths (`${HOME}/Library/CloudStorage/GoogleDrive-{YourGDriveEmailHere}...`) to match your system.
+- Adjust the paths (`${HOME}/repos/Banks/kmymoney...`) to match your system.
+- I have Google Drive backup this directory.
 - If you use another cloud storage, replace the path accordingly.
 
 ```sh
@@ -45,8 +46,8 @@ docker run -it --rm --name kmymoney -d \
     -e DISPLAY=host.docker.internal:0 \
     -e QT_QPA_PLATFORM=xcb \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v ${HOME}/Library/CloudStorage/GoogleDrive-{YourGDriveEmailHere}:/root/mydata \
-    -v ${HOME}/Library/CloudStorage/GoogleDrive-{YourGDriveEmailHere}/My\ Drive/Banks/kmymoney/.config/kmymoney:/root/.config/kmymoney \
+    -v ${HOME}/repos/Banks/kmymoney:/root/mydata \
+    -v ${HOME}/repos/Banks/kmymoney/.config/kmymoney:/root/.config/kmymoney \
     kmymoney-ubuntu
 # Shell into container
 docker exec -it kmymoney /bin/bash
